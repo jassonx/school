@@ -33,7 +33,7 @@ export const validatedLogin = () => async (dispatch) => {
       dispatch({ type: USER, payload: session.user });
       return session;
     } else {
-      logoutAuth();
+      Cookies.remove("token");
     }
   } catch (error) {
     return false;

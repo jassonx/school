@@ -124,15 +124,15 @@ const MainSider = ({ currentKey, ...props }) => {
               >
                 Configuración
               </Menu.Item>
-              <Menu.Item
-                key={"exit"}
-                onClick={() => logoutAuth()}
-                icon={<PoweroffOutlined />}
-              >
-                Cerrar sesión
-              </Menu.Item>
             </>
           )}
+          <Menu.Item
+            key={"exit"}
+            onClick={() => logoutAuth()}
+            icon={<PoweroffOutlined />}
+          >
+            Cerrar sesión
+          </Menu.Item>
         </Menu>
       </Sider>
     </>

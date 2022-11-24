@@ -23,7 +23,7 @@ const Home = () => {
       title: "TOTAL DE INSCRITOS",
       key: "company",
       className: "cursor_pointer",
-      render: (item) => <div>{item.total}</div>,
+      render: (item) => <div>{item.studentsCount}</div>,
     },
     Table.EXPAND_COLUMN,
   ];

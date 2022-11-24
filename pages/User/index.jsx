@@ -17,6 +17,7 @@ const User = ({ ...props }) => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
   const [infoGenericModal, setInfoGenericModal] = useState(null);
+  const [filter, setFilter] = useState("ALL");
 
   useEffect(() => {
     getUsers();
@@ -136,22 +137,6 @@ const User = ({ ...props }) => {
     }
   };
 
-  const Filter = (data) => {
-    if (!data) return;
-    setCurrentButton(data);
-    switch (data) {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-
-      default:
-        break;
-    }
-  };
-
   return (
     <>
       <MainLayout currentKey={["user"]}>
@@ -164,7 +149,9 @@ const User = ({ ...props }) => {
                 style={{
                   color: `${currentButton === 1 ? "#28ABE7" : "black"}`,
                 }}
-                onClick={() => Filter(1)}
+                onClick={() => {
+                  setCurrentButton(1), setFilter("ALL");
+                }}
               >
                 TODOS
               </Button>
@@ -175,7 +162,9 @@ const User = ({ ...props }) => {
                 style={{
                   color: `${currentButton === 2 ? "#28ABE7" : "black"}`,
                 }}
-                onClick={() => Filter(2)}
+                onClick={() => {
+                  setCurrentButton(2), setFilter("USER");
+                }}
               >
                 PROFESORES
               </Button>
@@ -186,7 +175,9 @@ const User = ({ ...props }) => {
                 style={{
                   color: `${currentButton === 3 ? "#28ABE7" : "black"}`,
                 }}
-                onClick={() => Filter(3)}
+                onClick={() => {
+                  setCurrentButton(3), setFilter("ADMIN");
+                }}
               >
                 ADMINISTRADORES
               </Button>
@@ -207,7 +198,11 @@ const User = ({ ...props }) => {
               loading={loading}
               style={{ width: "100%" }}
               columns={user}
-              dataSource={users}
+              dataSource={
+                filter === "ALL"
+                  ? users
+                  : users.filter((item) => item.role === filter)
+              }
               rowClassName={"table-row-light"}
               locale={{
                 emptyText: "No se encontraron resultados.",

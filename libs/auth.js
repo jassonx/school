@@ -82,7 +82,8 @@ export const loginAuth = async (token) => {
 
 export const logoutAuth = async () => {
   cookie.remove("token");
-  if (!Router?.router?.asPath == "/") Router.push("/");
+  console.log(Router);
+  Router.push("/");
 };
 
 export const userId = () => {
