@@ -1,0 +1,76 @@
+.containerPrincipal {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px red solid;
+}
+
+.containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.rounded {
+  border-radius: 0px 20px 20px 0px;
+  background: #23b8e3;
+}
+
+.mainContainer {
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: #e5e5e5;
+}
+
+.child {
+  width: 90%;
+}
+
+.table-row-light {
+  background-color: #e8f9fe;
+  border-radius: 10px !important;
+  margin-bottom: 30px !important;
+  margin-top: 30px !important;
+}
+
+.tableGrid {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.button-blue {
+  background: #23b8e3;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.title-modal {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.ant-input {
+  border: 1px #92c8d8 solid;
+  border-radius: 10px;
+}
+
+div.ant-select-selector {
+  border: 1px #92c8d8 solid !important;
+  border-radius: 10px !important;
+  height: 40px !important;
+}
+
+.ant-select
+  .ant-select-in-form-item
+  .ant-select-single
+  .ant-select-allow-clear
+  .ant-select-show-arrow
+  .ant-select-show-search {
+  border: none !important;
+}
